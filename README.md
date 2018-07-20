@@ -14,11 +14,11 @@ At Hinge, we track **ratings** between users. A rating is any of a number of act
 
 We call the person sending the rating the **player** and the person receiving the rating the **subject**. 
 
-If a pair of users has ether never interacted before, or only sent skips between themselves, they are able to perform any rating on each other, except match.
+If a pair of users has either never interacted before, or only sent skips between themselves, they are able to perform any rating on each other, except match.
 
 If a User A has sent a like to User B (`rating_type` 1 or 2), User A is unable to send another rating to User B until B responds. B is able to respond only with `rating_type` 3 to reject the incoming like, 4 to report User A for bad behavior, or 5 to match with User A and start chatting.
 
-If User B responds with `rating_type` 5, the two users have matched, and the can start chatting. However, at any point, either of the two users may now send a `rating_type` of 3 to block/remove the other user or 4 to report the other for bad behavior.
+If User B responds with `rating_type` 5, the two users have matched, and they can start chatting. However, at any point, either of the two users may now send a `rating_type` of 3 to block/remove the other user or 4 to report the other for bad behavior.
 
 If a pair of users has ever shared a `rating_type` of 3 or 4, those two users will forever be unable to access each other in the app, and no more ratings can be sent.
 
@@ -40,7 +40,7 @@ The files in the S3 bucket have the same schema as in this example.
 A month of fake ratings data are stored at s3://hinge-homework/director-data-engineering/ratings. We will be designing an ELT pipeline to make this stuff useful.
 
 1. Spin up a database to store these ratings. As a reminder, Hinge uses Redshift, but feel free to use whatever is easiest for you.
-2. Create a table in your DB for each file in the S3 bucket, with each table name equalling its corresponding file name.
+2. Create a table in your DB for each file in the S3 bucket, with each table name equalling its corresponding file name. For example, you will have a table called `fake_ratings_2018-02-01_0000_part_00`. You will have many tables.
 3. Design a schema that easily enables analysis on this dataset. Write whatever code you need to write to actually transform the ratings data into your schema. Below we've included some sample analysis questions which may be helpful as reference.
 4. Totally optional and not necessary extra credit: perform one of the below analyses on the dataset to show us how easy you made it, or show us something cool that you found yourself in the data.
 
