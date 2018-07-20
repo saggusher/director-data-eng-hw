@@ -37,14 +37,16 @@ In this situation, User A skips User B a couple times before finally sending a l
 The files in the S3 bucket have the same schema as in this example.
 
 ## The Homework
-Three months of fake ratings data are stored at s3://hinge-homework/director-data-engineering/ratings. We will be designing an ELT pipeline to make this stuff useful.
+A month of fake ratings data are stored at s3://hinge-homework/director-data-engineering/ratings. We will be designing an ELT pipeline to make this stuff useful.
 
 1. Spin up a database to store these ratings. As a reminder, Hinge uses Redshift, but feel free to use whatever is easiest for you.
 2. Create a table in your DB for each file in the S3 bucket, with each table name equalling its corresponding file name.
 3. Design a schema that easily enables analysis on this dataset. Write whatever code you need to write to actually transform the ratings data into your schema. 
 4. Totally optional and not necessary extra credit: perform one of the below analyses on the dataset to show us how easy you made it, or show us something cool that you found yourself in the data.
 
-In working on this homework, please work in a fork of this repo, and let us know when we can check out your code. We should be able to run your code with little difficulty. At Hinge, we use Bash and Python scripts to wrap these kinds of operations, but if you prefer something else, anything that we can run is fine. In the root directory of your fork, include a writeup justifying your ideas and methods.
+In working on this homework, please work in a fork of this repo, and let us know when we can check out your code. We should be able to run your code with little difficulty. At Hinge, we use Bash and Python scripts to wrap these kinds of operations, but if you prefer something else, anything that we can run is fine. 
+
+In the root directory of your fork, include a writeup justifying your ideas and methods. Consider how your method will scale and offer longer-term improvements.
 
 As a reminder, a major part of this role is to be a technical lead. For this homework, we care more about elegance and robustness than completion.
 
@@ -60,8 +62,9 @@ Moreover, we are aware that there are less annoying ways to do this than to load
 * How often do people change their mind about the people they like?
 
 #### Some considerations:
-* A single rating_type can have multiple semantic meanings. For example, a rating_type of 3 either means “Remove this person from the list of people I can send likes to”, “Reject this person’s incoming like”, or “Remove the person from my list of matches”, depending on the preceding ratings between a pair of users. 
+* A single `rating_type` can have multiple semantic meanings. For example, a `rating_type` of 3 either means “Remove this person from the list of people I can send likes to”, “Reject this person’s incoming like”, or “Remove the person from my list of matches”, depending on the preceding ratings between a pair of users. 
 * Assume that every day, another file is added to this S3 bucket, and that you can’t predict the exact names of future files. How will you make sure that your load script catches these? How will you make sure that your transform script can find non-deterministically named tables?
+* In the final schema, do we really need a row for every rating?
 
 
 
