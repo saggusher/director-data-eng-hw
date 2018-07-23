@@ -1,18 +1,28 @@
 # Director of Data Engineering Homework
 
 ## Dataset Explanation
-At Hinge, we track **ratings** between users. A rating is any of a number of actions that one user can take on another. In this dataset, the types of ratings are:
+At Hinge, we track **ratings** between users. A rating is any of a number of actions that one user can take on another. 
+
+We call the person sending the rating the **player** and the person receiving the rating the **subject**. On the app, there are a three main screens where players can send ratings to subjects:
+
+1. The **Discover** screen, which is where a user can see a queue of other users's profiles for the first time, and decide whether or not or to send likes to them. On this screen, a player can send a **like**, with the option to include a **comment** with their like. Additionally, they can **skip** a subject to see the next one in their queue. It is possible to see a skipped subject again some time in the future. If a player wishes to never see someone in their queue again, they can choose to **remove** the subject. Lastly, if the player sees something inappropriate on the subject's profile, they can send a **report**, so the profile can be reviewed by our CS team.
+
+2. The **Likes You** screen, where the player can review all of the people who have sent likes to them. On this screen, the player can 1) **reject** the incoming like if she is not interested, 2) **match** with the incoming like to start a chat, or 3) **report** the incoming like to our CS team.
+
+3. The **Chats** screen, where the player can chat with people with whom she has matched. On this screen, the only two ratings a player can send are a **block**, which will remove the chat from the Chats screen for both users, and a **report**, which will end the chat, as well as alert or CS team to look into it.
+
+In this dataset, these ratings are represented by the following numbers:
 
 | rating_type | meaning                           |
 |-------------|-----------------------------------|
 | 0           | skip                              |
-| 1           | like without a comment            |
-| 2           | like with a comment               |
-| 3           | remove/block/reject incoming like |
+| 1           | like                              |
+| 2           | comment                           |
+| 3           | remove/block/reject               |
 | 4           | report                            |
 | 5           | match                             |
 
-We call the person sending the rating the **player** and the person receiving the rating the **subject**. 
+ 
 
 If a pair of users has either never interacted before, or only sent skips between themselves, they are able to perform any rating on each other, except match.
 
@@ -56,7 +66,7 @@ As a reminder, a major part of this role is to be a technical lead. For this hom
 * What is the average reciprocation rate?
 * What % of reports happen after two users connect as opposed to before?
 * What is the average number of skips before a like?
-* How often do people see duplicates potentials within a day?
+* In discover, how often do people see duplicates subjects within a day (assume every subject is either skipped or liked)?
 * How often do people change their mind about the people they like?
 
 #### Some considerations:
