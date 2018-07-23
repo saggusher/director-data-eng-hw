@@ -5,7 +5,12 @@ At Hinge, we track **ratings** between users. A rating is any of a number of act
 
 We call the person sending the rating the **player** and the person receiving the rating the **subject**. On the app, there are a three main screens where players can send ratings to subjects:
 
-1. The **Discover** screen, which is where a user can see a queue of other users's profiles for the first time, and decide whether or not or to send likes to them. On this screen, a player can send a **like**, with the option to include a **comment** with their like. Additionally, they can **skip** a subject to see the next one in their queue. It is possible to see a skipped subject again some time in the future. If a player wishes to never see someone in their queue again, they can choose to **remove** the subject. Lastly, if the player sees something inappropriate on the subject's profile, they can send a **report**, so the profile can be reviewed by our CS team.
+1. The **Discover** screen, which is where a user can see a queue (one at the time) of other users's profiles for the first time. On this screen the user can decide to apply one of the following actions:
+	(1) Send a **like**.
+	(2) Send a **like** with a **comment**.
+	(3) **skip** the subject - In this case It is possible to see a skipped subject again some time in the future on this screen).
+	(4) **remove** the subject - In case the player does not want to see this subject again. 
+	(5) **report** the subject - Inc ase the player sees something inappropriate on the subject's profile, so the profile can be reviewed by our CS team.
 
 2. The **Likes You** screen, where the player can review all of the people who have sent likes to them. On this screen, the player can 1) **reject** the incoming like if she is not interested, 2) **match** with the incoming like to start a chat, or 3) **report** the incoming like to our CS team.
 
