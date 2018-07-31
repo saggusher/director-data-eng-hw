@@ -5,11 +5,21 @@ At Hinge, we track **ratings** between users. A rating is any of a number of act
 
 We call the person sending the rating the **player** and the person receiving the rating the **subject**. On the app, there are a three main screens where players can send ratings to subjects:
 
-1. The **Discover** screen, which is where a user can see a queue of other users's profiles for the first time, and decide whether or not or to send likes to them. On this screen, a player can send a **like**, with the option to include a **comment** with their like. Additionally, they can **skip** a subject to see the next one in their queue. It is possible to see a skipped subject again some time in the future. If a player wishes to never see someone in their queue again, they can choose to **remove** the subject. Lastly, if the player sees something inappropriate on the subject's profile, they can send a **report**, so the profile can be reviewed by our CS team.
+1. The **Discover** screen, which is where a player can see a queue (one at the time) of subject profiles for the first time. On this screen the user can decide to apply one of the following actions:
+	(1) Send a **like**.
+	(2) Send a **like** with a **comment**.
+	(3) **skip** a subject - In this case the player can see this subject again in the future. 
+	(4) **remove** a subject - In case the player does not want to see this subject again in the future. 
+	(5) **report** a subject - In case the player sees something inappropriate on the subject's profile, so the profile can be reviewed by our CS team.
 
-2. The **Likes You** screen, where the player can review all of the people who have sent likes to them. On this screen, the player can 1) **reject** the incoming like if she is not interested, 2) **match** with the incoming like to start a chat, or 3) **report** the incoming like to our CS team.
+2. The **Likes You** screen, where the player can review all of the people who have sent likes to them. On this screen, the player can:
+	(1) **reject** the incoming like if she is not interested. 
+	(2) **match** with the incoming like to start a chat 
+	(3) **report** the incoming like to our CS team.
 
-3. The **Chats** screen, where the player can chat with people with whom she has matched. On this screen, the only two ratings a player can send are a **block**, which will remove the chat from the Chats screen for both users, and a **report**, which will end the chat, as well as alert or CS team to look into it.
+3. The **Chats** screen, where the player can chat with people with whom she has matched. On this screen, the only two ratings a player can send are:
+	(1) **block** - remove the chat from the Chats screen for both users.
+	(2) **report** - end the chat, as well as alert or CS team to look into it.
 
 In this dataset, these ratings are represented by the following numbers:
 
@@ -23,7 +33,7 @@ In this dataset, these ratings are represented by the following numbers:
 | 5           | match                             |
 
  
-
+## Rating Rules 
 If a pair of users has either never interacted before, or only sent skips between themselves, they are able to perform any rating on each other, except match.
 
 If a User A has sent a like to User B (`rating_type` 1 or 2), User A is unable to send another rating to User B until B responds. B is able to respond only with `rating_type` 3 to reject the incoming like, 4 to report User A for bad behavior, or 5 to match with User A and start chatting.
