@@ -84,5 +84,21 @@ As a reminder, a major part of this role is to be a technical lead. For this hom
 * Assume that every day, another file is added to this S3 bucket, and that you can’t predict the exact names of future files. How will you make sure that your load script catches these? How will you make sure that your transform script can find non-deterministically named tables?
 * In the final schema, do we really need a row for every rating?
 
+**Solution**
+
+**Setup steps**
+**Assumptions**
+* Assuming that Virtualenv, mkvirtualenv and pip is installed
+1. Clone the project to any directory
+2. Execute setupenv.sh
+	a. This scripts takes two parameters: workon_home and project_name
+3. cd $workon_home/$project_name/scripts/sh
+4. execute processfiles.sh
+	a. This sccript takes four parameters:  workon_home, project_name, pytonscript name (processfakefiles.sh), files_to_proces
+	
+**logs**
+* Logs of the execution are created under project folder
+
+**Redshift cluster details will be shared separately**
 
 
